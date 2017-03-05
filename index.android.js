@@ -13,11 +13,11 @@ import {
 } from 'react-native';
 import MaterialCalendarView from './android-native-component/MaterialCalendarView';
 
-export default class material_calendarview extends Component {
+export default class CalendarExample extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {message: 'test'};
+    this.state = { dateObject: {} };
   }
 
   render() {
@@ -28,13 +28,13 @@ export default class material_calendarview extends Component {
         </Text>
         <MaterialCalendarView 
           style={styles.calendarView} 
-          onChangeMessage={(message) => this.setState({message})}
+          onDateChange={(dateObject) => this.setState({ dateObject })}
           day={20} 
           month={4} 
           year={2017} 
         />
         <Text style={styles.instructions}>
-          {JSON.stringify(this.state.message)}
+          {JSON.stringify(this.state.dateObject)}
         </Text>
       </View>
     );
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   instructions: {
+    padding: 20,
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
@@ -64,4 +65,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('material_calendarview', () => material_calendarview);
+AppRegistry.registerComponent('material_calendarview', () => CalendarExample);

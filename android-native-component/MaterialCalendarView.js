@@ -9,10 +9,10 @@ class MaterialCalendarComponent extends Component {
 	}
 
 	_onChange(event) {
-		if(!this.props.onChangeMessage) {
+		if(!this.props.onDateChange) {
 			return;
 		}
-		this.props.onChangeMessage(event.nativeEvent);
+		this.props.onDateChange(event.nativeEvent);
 	}
 
 	render() {
@@ -24,7 +24,7 @@ MaterialCalendarComponent.propTypes = {
 	day: PropTypes.number,
 	month: PropTypes.number,
 	year: PropTypes.number,
-	onChangeMessage: PropTypes.func,
+	onDateChange: PropTypes.func,
 	...View.propTypes,
 }
 
